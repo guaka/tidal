@@ -1,0 +1,34 @@
+hush
+
+d1 $ weave 16 (vowel "a i o e u") $ map sound["odx:0 hh odx:1 hh*4", samples"jvbass*8" "1 2 3 4", samples"bd:3 hh sn:2 hh" "0 1 2 3 4"]
+
+d1 $ silence
+
+d2 $ brak $ slow 1 $ sound "bd:3 sn:2"
+ |+| shape "0.99"
+ |+| cutoff "0.3"
+
+d2 $ silence
+
+d8 $ sound (samples "house*4" "0 1 2 3")
+
+
+d9 $ slow 1 $ sound "koy:0"
+ |+| speed "1"
+ |+| delay "0.5"
+ |+| delaytime "0.4"
+ |+| delayfeedback "0.9"
+
+
+d2 $ silence
+
+d3 $ slow 3 $ brak $ sound (samples "jvbass*7 hit:0" "0 10 3 5 6 7")
+ |+| speed "1.6 0.53 0.46 -0.81 3.4 0.69 0.53 -0.9"
+ |+| delay "0.6"
+ |+| delaytime "0.32"
+ |+| delayfeedback "0.92"
+
+d3 $ silence
+
+cps 1
+
