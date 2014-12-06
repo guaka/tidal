@@ -1,0 +1,38 @@
+cps 0.9
+
+d3 $ brak $ sound "bd:3 hh sn:3 hh" |+| shape "0.9"
+
+d3 $ brak $ sound "bd:3 hh sn:3 hh" |+| shape "0.9"
+ |+| delay "0.99"
+ |+| delayfeedback "0.99"
+ |+| delaytime "[0.5 0.001]"
+
+
+d2 $ sound (samples "jvbass*58" "0 4 2 3 1 5")
+
+
+
+d1 $ (jux rev $ sound (samples "hit*3 ~ ~" "0 5 7 8 3 5 6"))
+|+| delay "0.99"
+|+| delayfeedback "0.99"
+|+| delaytime "[0.4 0.03 0.5 0.2 0.02 0.001]/6"
+
+
+d1 $ silence
+hush
+
+d1 $ stack [
+  sound "bd bd*2",
+  sound "hh*2 [sn cp] cp future*4",
+  sound (samples "arpy*8" (run 2))
+]
+
+
+d1 $ brak $ sound (samples "jvbass*4" "0 3 7 10")
+  |+| resonance "0.7"
+  |+| gain "0.99"
+  |+| cutoff ((*) <$> sinewave1 <*> (slow 1 $ "0 0.25 0.75"))
+  |+| delay "0.3"
+  |+| delaytime "0.25"
+  |+| delayfeedback sinewave1
+  |+| pan sinewave1
