@@ -1,0 +1,94 @@
+d1 $ sound "bd sn/2"
+
+
+d1 $ sound "bd:3 sn:1"
+
+
+d1 $ sound "bd:3 sn:2 bd:3 sn:2"
+   |+| vowel "i a a u"
+   |+| pan "0.4 0.3 0.4 0.6"
+
+d2 $ sound "[bd:3 bd:3 bd:3] [cp cp]"
+
+d1 $ sound "bd:3"
+
+
+
+d1 $ sound "[bd sn sn*3]/2 [bd sn*3 bd*4]/3"
+
+
+
+
+
+hush
+
+d2 $ sound "[metal future mouth gretsch] / 4"
+ |+| pan sinewave1
+ |+| shape sinewave1
+
+d3 $ sound "[bass2 bass2] / 2"
+ |+| pan sinewave1
+ |+| vowel "o"
+
+
+d4 $ density 0.5 $ every 4 (rev) (sound "bd:2*2 [bd [sn:3 sn*2 sn] sn]")
+d4 $ silence
+
+d5 $ sound (every 4 (density 4) "bd*2 [bd [sn sn*2 sn] sn]")
+   |+| pan sinewave1
+   |+| cutoff 0.6
+
+d5 $ every 4 (0.25 <~) $ sound (density 2 "bd sn kurt:12")
+
+d5 $ sound (brak "bd sn kurt")
+
+d5 $ slow 2 $ degrade $ sound "[[[feel:5*8,feel*3] feel:3*8], feel*4]"
+   |+| accelerate "-6"
+   |+| speed "2"
+
+cps 1.13
+
+hush
+
+d5 $ slow 2 $ sound "bd:3 ~ sn:2 bd:3 ~ bd:3? [sn:2 bd:3?] ~"
+
+
+d1 $ sound (density 0.5 "bd? sn? kurt?")
+   |+| density 3 (vowel "i a o")
+
+
+d2 $ interlace (sound  "bd sn kurt") (every 3 rev $ sound  "bd sn:2")
+
+d3 $ iter 4 $ sound "metal future mouth hh"
+
+d2 $ silence
+
+
+d4 $ striate 2 $ sound "metal:3? metal:5? metal:6? metal:4?"
+    |+| density 12 (vowel "a e i")
+
+
+d1 $ every 4 (0.5 <~) $ jux (spread' (density) "[2 3 2]/4") $ sound "{drum drum odx*2, drum/2 drum/3 [hit/2 ~ ~ ~]/4 drum/2 ~}"
+   |+| shape "0.8"
+
+d2 $ sound (samples "{casio ~ bd*3, bd*2 rm*3, numbers lt [mt sn, lt*3 voodoo] sn bass3*2}" ("{7 2, 3 1 5}")) |+|end rand
+
+d1 $ sound "bd:3 hh sn:3 hh" |+| shape "0.5"
+
+hush
+
+d2 $ striate 128 $ slow 2 $ sound (samples "numbers" ("{8, 3, 1 5, 2 4}"))
+   |+| shape "0.8"
+
+
+d2 $ weave 2 (pan sine1) $map sound["[odx:3*4[odx:2*2odx*8],[hh*4,~odx/12]*4]",(1/16)~>(samples"jvbass*8""2 2[3 4]1"),"[blue/1]/2~~[~odx/13*2]"]
+
+d3 $ sound (samples "jvbass*8" "0 1 2 3 4 5 6 7") |+| shape "0.4" |+| speed "1.1"
+
+cps 1
+hush
+
+
+d1 $ (spread' slow "1%4 2 1 3" $ spread (striate) [2,3,4,1] $ sound
+"sn:2 sid:3 cp sid:4")
+  |+| speed "[1 2 1 1]/2"
