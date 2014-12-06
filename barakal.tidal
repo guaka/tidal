@@ -1,0 +1,35 @@
+hush
+
+d1 $ striate 40 $ sound "breaks125"
+   |+| accelerate "5"
+   |+| speed "1"
+   |+| delay "0.99"
+   |+| delaytime "2"
+   |+| delayfeedback "0.9"
+
+
+d1 $ silence
+
+
+d2 $ striate 60 $ sound "breaks125"
+   |+| accelerate "50"
+   |+| speed "-5"
+   |+| delay "0.99"
+   |+| delaytime "0.5"
+   |+| delayfeedback "0.9"
+
+
+d2 $ silence
+
+
+d3 $ brak $ striate 100 $ sound "breaks125"
+   |+| shape "0.99"
+   |+| accelerate "2"
+   |+| speed "4"
+   |+| delay "0.5"
+   |+| delaytime "0.001"
+   |+| delayfeedback sinewave1
+   |+| pan sinewave1
+
+
+cps 1
