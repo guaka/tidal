@@ -32,4 +32,13 @@ d3 $ brak $ striate 100 $ sound "breaks125"
    |+| pan sinewave1
 
 
-cps 1
+hush 
+
+d4 $ brak $ striate 128 $ sound "breaks125"
+   |+| speed "-1.0"
+   |+| delay "0.99"
+   |+| delaytime "0.9999"
+   |+| delayfeedback sinewave2
+
+
+cps 0.6
