@@ -1,0 +1,29 @@
+hush
+
+d4 $ slow 3 $ jux (rev) $ slowspread ($) [density 32, rev, slow 16, striate 32, (|+| speed "0.8 0.4 0.81")]  $ sound "sax:5"
+ |+| delay "0.4"
+ |+| delaytime "0.56"
+ |+| delayfeedback "0.9"
+ |+| speed "1 -1"
+ |+| pan (slow 16 sinewave1)
+ |+| shape "0.8"
+
+d4 $ silence
+
+
+d5 $ slow 6 $ jux (rev) $ slowspread ($) [density 32, rev, slow 16, striate 32, (|+| speed "0.8 1.2 0.81")]  $ sound "sax:6"
+ |+| delay "0.5"
+ |+| delaytime "2.56"
+ |+| delayfeedback "0.9"
+ |+| speed "1 -1"
+ |+| pan (slow 16 sinewave1)
+
+d6 $ slow 7 $ jux (rev) $ slowspread ($) [density 32, rev, slow 2, striate 32, (|+| speed "0.8 1.2 0.81")]  $ sound "sitar"
+ |+| delay "0.5"
+ |+| delaytime (slow 30 ((/ 1000) <$> sinewave1))
+ |+| delayfeedback "0.98"
+ |+| speed "1 -32"
+ |+| pan (slow 16 sinewave1)
+
+
+cps 1

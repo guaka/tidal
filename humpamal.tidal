@@ -1,0 +1,21 @@
+hush
+
+
+d7 $ slow 0.5 $ brak $ jux (rev) $ slowspread ($) [density 12, rev, slow 2, striate 32, (|+| speed "0.8 1.2 2.81")]  $ sound "bd:3 hh sn:2 hh"
+ |+| delay "0.5"
+ |+| delaytime (slow 200 ((/ 1000) <$> sinewave1))
+ |+| delayfeedback "0.99"
+ |+| speed "1 0.5"
+ |+| pan (slow 16 sinewave1)
+
+
+d7 $ slow 0.15 $ brak $ jux (rev) $ slowspread ($) [density 12, rev, slow 2, striate 32, (|+| speed "0.6 1.3 2.81")]  $ sound "bd:3 hh:3 sn:3 hh:3"
+ |+| delay "0.5"
+ |+| delaytime (slow 200 ((/ 1000) <$> sinewave1))
+ |+| delayfeedback "0.99"
+ |+| speed "1 0.5"
+ |+| pan (slow 16 sinewave1)
+
+
+d7 $ silence
+
